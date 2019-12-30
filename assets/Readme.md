@@ -1,4 +1,1 @@
------------ DOCUMENTACION -----------
---fz-big: 2em;
---fz-medium: 1;
---fz-small: .7.5m;
+
