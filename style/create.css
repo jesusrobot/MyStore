@@ -1,0 +1,106 @@
+:root {
+    --fz-big-form: 2em;
+    --fz-medium: 1em;
+    --fz-small: .7.5em;
+    --color-black: #504f4f;
+    --color-blue: rgb(10, 132, 255);
+    --mb-big: 2vh;
+    --mb-small: .5vh;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Lato', sans-serif;
+    user-select: none; 
+}
+
+/* main app */
+.main-app {
+    display: flex;
+    justify-content: center;
+    width: auto;
+    height: 88vh;
+    padding: 0 3.5vw;
+    padding-top: 2vh;
+}
+.formulary {
+    width: 60%;
+}
+.single-input, .numerous-input {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: var(--mb-big);
+    border: none;
+}
+.title-input {
+    font-size: var(--fz-small);
+    color: var(--color-black);
+    margin-bottom: var(--mb-small);
+    width: 100%;
+}
+[type="text"], [type="number"] {
+    width: 100%;
+    padding: 1.3vh;
+    color: #666;
+}
+.body-input {
+    display: flex;
+    justify-content: space-between;
+}
+.input {
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+}
+select{
+    width: 30%;
+    color: #666;
+    background: rgb(229, 229, 234);
+    
+}
+/* media queries */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    
+    .formulary {
+        width: 100%;
+        font-size: .9em;
+    }
+    .single-input, .numerous-input {
+        margin-bottom: 1.1vh;
+    }
+    [type="text"], [type="number"] {
+        padding: 1.3vh;
+    }
+    select{
+        width: 55%;
+    }
+}
+@media only screen and (max-device-height: 360px){
+    .navigation{
+        position: fixed;
+        width: 100%;
+        z-index: 2; 
+    }
+    .title {
+        margin-top: -23px;
+    }
+    .title-bar{
+        padding-top: 18vh;
+    }
+    .formulary {
+        width: 80%;
+        font-size: .9em;
+    }
+}
+@media only screen and (min-device-width : 768px) and (max-device-width : 1000px) {
+    .formulary {
+        width: 80%;
+        font-size: 1em;
+    }
+    .single-input, .numerous-input {
+        margin-bottom: 1vh;
+    }
+}

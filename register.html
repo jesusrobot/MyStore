@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MyStore</title>
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i&display=swap"> -->
+    <link rel="shortcut icon" href="assets/img/favicon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style/components.css">
+    <link rel="stylesheet" href="style/normalize.css">
+    <link rel="stylesheet" href="style/register.css">
+</head>
+<body>
+    <!-- navigation -->
+    <nav class="navigation">
+        <section class="navigation-left">
+            <button class="button back" id="back">
+                <img class="icon" src="assets/img/back.svg">
+            </button>
+            <button class="button hide">
+                <img src="assets/img/discount.svg" id="discount-hide" class="icon">
+            </button>
+            <button class="button hide">
+                <img src="assets/img/lightning.svg" id="flashSell-hide" class="icon">
+            </button>
+            
+        </section>
+        <section class="navigation-center">
+            <h1 class="app-title">MyStore</h1>
+        </section>
+        <section class="navigation-rigth">
+            <!-- <div class="finder-container" id="form">
+                <input type="text" placeholder="Finder" class="finder" id="finder">
+            </div> -->
+            <button class="button show">
+                <img src="assets/img/discount.svg" id="discount" class="icon">
+            </button>
+            <button class="button show">
+                <img src="assets/img/lightning.svg" id="flashSell" class="icon">
+            </button>
+            <button class="button">
+                <img class="icon" src="assets/img/trash.svg" id="trash">
+            </button>
+            <button class="button">
+                <img class="icon" src="assets/img/save.svg" id="save">
+            </button>
+            <button class="button">
+                <img class="icon" id="pop" src="assets/img/menutwo.svg">
+            </button>
+        </section>
+    </nav>
+    <!-- title bar -->
+    <section class="title-bar">
+        <div class="offset"></div>
+        <div class="title-container">
+            <p class="title">Caja registradora</p>
+        </div>
+        <div class="offset"></div>
+    </section>
+    <!-- main app -->
+    <main class="main-app" id="main-app">
+        <section class="left-container">
+            <section class="result-screen">
+                <div class="show-result">
+                    <!-- <img src="assets/img/dollar-symbol.svg" class="icon"> -->
+                    <span class="dollar">$</span>
+                    <p class="result" id="result">0.00</p>
+                </div>
+                <div class="change-badge" id="changeBadge">
+                    <button id="toMxn" class="active" disabled>MXN</button>
+                    <button id="toUsd">USD</button>
+                </div>
+            </section>
+            <section class="ticket-container" id="ticketContainer">
+               <!-- insert here -->
+            </section>
+        </section>
+        <section class="rigth-container">
+            <section class="tabs-container" id="tabs">
+                <button class="select-tab" id="all">Todo</button>
+                <button id="C1"></button>
+                <button id="C2"></button>
+                <button id="C3"></button>
+                <button id="C4"></button>
+            </section>
+            <section class="products-container" id="productsContainer">
+                <!-- insert here -->
+            </section>
+        </section>
+    </main>
+    <!-- menu -->
+    <nav class="overlay-menu" id="overlay">
+        <div class="popup-menu" id="popup">
+            <div class="link-container">
+               <a href="create.html" class="link">Agregar producto</a> 
+            </div>
+            <div class="link-container">
+                <a href="register.html" class="link here">Caja registradora</a>
+            </div>
+            <div class="link-container">
+                <a href="inventory.html" class="link">Inventario</a>
+            </div>
+            <div class="link-container">
+                <a href="history.html" class="link">Historial</a>
+            </div>
+            <!-- <div class="link-container">
+                <a href="notes.html" class="link">Notas</a>
+            </div> -->
+            <div class="link-container">
+                <a href="about.html" class="link">Acerca de</a>
+            </div>
+            <div class="link-container">
+                <!-- <a href="configuration.html" class="link">Configuración</a>
+            </div> -->
+            <div class="link-container no-border-bottom">
+                <button class="close" id="cerrar">Cerrar</button>
+            </div>
+        </div>
+    </nav>
+    <!-- delete -->
+    <div class="overlay-delete" id="deleteOverlay">
+        <div class="popup-delete" id="deletePop">
+            <section class="title-container">
+                <p class="title">Eliminar</p>
+            </section>
+            <section class="description-container">
+                <p class="description">Estas a punto de borrar esta compra. ¿Estas seguro?</p>
+            </section>
+            <section class="buttons-container">
+                <button id="closePopupDelete">Cancelar</button>
+                <button id="actionDelete">Aceptar</button>
+            </section>
+        </div>
+    </div>
+    
+    <!-- save -->
+    <div class="overlay-save" id="saveOverlay">
+        <div class="popup-save" id="savePop">
+            <section class="title-container">
+                <p class="title">Guardar</p>
+            </section>
+            <section class="description-container">
+                <p class="description">Estas a punto de Guardar esta compra. ¿Estas seguro?</p>
+            </section>
+            <section class="money-in">
+                <fieldset class="single-input">
+                    <!-- <label class="title-input">Precio</label> -->
+                    <input type="text" id="priceIn" placeholder="Ingreso en mxn" class="input input-money mb-inputs">
+                    <!-- <div class="divisa-cobranza" id="divisaMoneyIn">MXN</div> -->
+                </fieldset>
+            </section>
+            <section class="printer">
+                <div class="label">
+                    <p class="lebel-item">Generar Ticket</p>
+                </div>
+                <div class="check">
+                        <input type='checkbox' class='ios8-switch' id='checkbox-1'>
+                        <label for='checkbox-1'></label>
+                </div>
+            </section>
+            <section class="buttons-container">
+                <button id="closePopupSave">Cancelar</button>
+                <button id="actionSave">Aceptar</button>
+            </section>
+        </div>
+    </div>
+    <!-- flashsell -->
+    <div class="overlay-save" id="flashOverlay">
+        <div class="popup-save" id="flashPop">
+            <section class="title-container">
+                <p class="title">Venta rápida</p>
+            </section>
+            <section class="description-container">
+                <p class="description">Estas a punto de vender un producto no registrado en esta compra</p>
+            </section>
+            <fieldset class="single-input">
+                <!-- <label class="title-input">Precio</label> -->
+                <input type="text" id="nameNon" placeholder="Nombre" class="input mb-inputs">
+            </fieldset>
+            <fieldset class="single-input mb">
+                <!-- <label class="title-input">Precio</label> -->
+                <input type="number" id="priceBuyNon" placeholder="Precio" class="input mb-inputs">
+            </fieldset>
+            <!-- <fieldset class="single-input mb"> -->
+                <!-- <label class="title-input">Nombre del producto</label> -->
+                <!-- <input type="number" id="nameProductNon" placeholder="Cantidad" class="input">  -->
+            <!-- </fieldset> -->
+            <section class="buttons-container">
+                <button id="closePopupFlash">Cancelar</button>
+                <button id="actionFlashSell">Aceptar</button>
+            </section>
+        </div>
+    </div>
+    <!-- descuento -->
+    <div class="overlay-save" id="descuentoOverlay">
+        <div class="popup-save" id="descuentoPop">
+            <section class="title-container">
+                <p class="title">Descuento</p>
+            </section>
+            <section class="description-container">
+                <p class="description">Estas a punto de aplicarle un descuento a esta compra</p>
+            </section>
+            <fieldset class="single-input">
+                <!-- <label class="title-input">Precio</label> -->
+                <input type="number" id="fijo" placeholder="Descuento fijo" class="input mb-inputs">
+            </fieldset>
+            <fieldset class="single-input mb">
+                <!-- <label class="title-input">Precio</label> -->
+                <input type="number" id="porcentaje" placeholder="Descuento por porcentaje" class="input mb-inputs">
+            </fieldset>
+            <div class="resultArea mb" id="resultArea">
+                <p class="titleArea">Nuevo total</p>
+                <p class="newResultView">
+                    $<span id="priceNew"></span> <span class="divisa" id="divisaNew"></span>
+                </p>
+                <div id="before" class="before"></div>
+            </div>
+            <section class="buttons-container">
+                <button id="closePopupDiscount">Cancelar</button>
+                <button id="actionDiscount">Aceptar</button>
+            </section>
+        </div>
+    </div>
+    <!-- alert -->
+    <div class="overlay-alert" id="alertOverlay">
+        <div class="popup-alert" id="alertPop">
+            <section class="title-container">
+                <p class="title">Alerta</p>
+            </section>
+            <section class="description-container">
+                <p class="description">Debes de llenar todos los campos para registrar un producto</p>
+            </section>
+            <section class="buttons-container">
+                <button id="closePopupAlert">Aceptar</button>
+            </section>
+        </div>
+    </div>
+    <!-- alert 2 -->
+    <div class="overlay-alert" id="alertOverlay2">
+        <div class="popup-alert" id="alertPop2">
+            <section class="title-container">
+                <p class="title">Alerta</p>
+            </section>
+            <section class="description-container">
+                <p class="description">El stock de este producto es 0</p>
+            </section>
+            <section class="buttons-container">
+                <button id="closePopupAlert2">Aceptar</button>
+            </section>
+        </div>
+    </div>
+    <!-- alert -->
+    <div class="overlay-alert" id="errOverlay">
+        <div class="popup-alert" id="errPop">
+            <section class="title-container">
+                <p class="title">Pago insuficiente</p>
+            </section>
+            <section class="description-container">
+                <p class="description">Para poder saldar el monto de la venta se necesitan $<span id="saldo"></span> <span id="divisarr"></span></p>
+            </section>
+            <section class="buttons-container">
+                <button id="closePopupAlert3">Aceptar</button>
+            </section>
+        </div>
+    </div>
+    <!-- scripts -->
+    <script src="core/menu.js"></script> 
+    <script src="core/back.js"></script> 
+    <script src="core/register.js"></script>  
+</body>
+</html>

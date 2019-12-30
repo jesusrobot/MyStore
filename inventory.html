@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MyStore</title>
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i&display=swap"> -->
+    <link rel="shortcut icon" href="assets/img/favicon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style/components.css">
+    <link rel="stylesheet" href="style/normalize.css">
+    <link rel="stylesheet" href="style/inventory.css">
+</head>
+<body>
+    <!-- navigation -->
+    <nav class="navigation">
+        <section class="navigation-left">
+            <button class="button" id="back">
+                <img class="icon" src="assets/img/back.svg">
+            </button>
+        </section>
+        <section class="navigation-center">
+            <h1 class="app-title">MyStore</h1>
+        </section>
+        <section class="navigation-rigth">
+            <!-- <div class="finder-container" id="form">
+                <input type="text" placeholder="Finder" class="finder" id="finder">
+            </div> -->
+            <button class="button">
+                <img class="icon" src="assets/img/trash.svg" id="trash">
+            </button>
+            <button class="button">
+                <img class="icon" src="assets/img/edit.svg" id="update">
+            </button>
+            <button class="button">
+                <img class="icon" id="pop" src="assets/img/menutwo.svg">
+            </button>
+        </section>
+    </nav>
+    <!-- title bar -->
+    <section class="title-bar">
+        <div class="offset"></div>
+        <div class="title-container">
+            <p class="title">Inventario</p>
+        </div>
+        <div class="offset"></div>
+    </section>
+    <!-- main app -->
+    <main class="main-app">
+        <div class="tabs-container" id="tabs">
+            <button class="select-tab" id="all">Todo</button>
+            <button id="C1"></button>
+            <button id="C2"></button>
+            <button id="C3"></button>
+            <button id="C4"></button>
+        </div>
+        <div class="table-container">
+            <div class="table-header">
+                <div class="col-name">Nombre</div>
+                <div class="col-name">Proveedor</div>
+                <div class="col-name">Compra</div>
+                <div class="col-name">Venta</div>
+                <div class="col-name">Medida</div>
+                <div class="col-name">Stock</div>
+                <div class="col-name">Vendidos</div>
+                <div class="col-name">Costo</div>
+                <div class="col-name">Beneficio</div>
+                <div class="col-name">Total</div>
+            </div>
+            <div class="table-body" id="table-body">
+                <!-- insert -->
+            </div>
+        </div>
+    </main>
+    <!-- menu -->
+    <nav class="overlay-menu" id="overlay">
+        <div class="popup-menu" id="popup">
+            <div class="link-container">
+               <a href="create.html" class="link">Agregar producto</a> 
+            </div>
+            <div class="link-container">
+                <a href="register.html" class="link">Caja registradora</a>
+            </div>
+            <div class="link-container">
+                <a href="inventory.html" class="link here">Inventario</a>
+            </div>
+            <div class="link-container">
+                <a href="history.html" class="link">Historial</a>
+            </div>
+            <!-- <div class="link-container">
+                <a href="notes.html" class="link">Notas</a>
+            </div> -->
+            <div class="link-container">
+                <a href="about.html" class="link">Acerca de</a>
+            </div>
+            <!-- <div class="link-container">
+                <a href="configuration.html" class="link">Configuración</a>
+            </div> -->
+            <div class="link-container no-border-bottom">
+                <button class="close" id="cerrar">Cerrar</button>
+            </div>
+        </div>
+    </nav>
+    <!-- delete -->
+    <div class="overlay-delete" id="deleteOverlay">
+        <div class="popup-delete" id="deletePop">
+            <section class="title-container">
+                <p class="title">Eliminar</p>
+            </section>
+            <section class="description-container">
+                <p class="description">Estas a punto de borrar este producto. ¿Estas seguro?</p>
+            </section>
+            <section class="buttons-container">
+                <button id="closePopupDelete">Cancelar</button>
+                <button id="actionDelete">Aceptar</button>
+            </section>
+        </div>
+    </div>
+    <!-- save -->
+    <div class="overlay-save" id="saveOverlay">
+        <div class="popup-save" id="savePop">
+            <section class="title-container">
+                <p class="title">Guardar</p>
+            </section>
+            <section class="description-container">
+                <p class="description">Estas a punto de guardar este producto. ¿Estas seguro?</p>
+            </section>
+            <section class="buttons-container">
+                <button id="closePopupSave">Cancelar</button>
+                <button id="actionSave">Aceptar</button>
+            </section>
+        </div>
+    </div>
+    <!-- alert -->
+    <div class="overlay-alert" id="alertOverlay">
+        <div class="popup-alert" id="alertPop">
+            <section class="title-container">
+                <p class="title">Alerta</p>
+            </section>
+            <section class="description-container">
+                <p class="description">Debes seleccionar primero un producto</p>
+            </section>
+            <section class="buttons-container">
+                <button id="closePopupAlert">Aceptar</button>
+            </section>
+        </div>
+    </div>
+    <!-- update -->
+    <div class="overlay-update" id="updateOverlay">
+        <div class="popup-update" id="updatePop">
+            <section class="title-container">
+                <p class="title">Actualizar</p>
+            </section>
+            <div class="formulary">
+                <fieldset class="single-input">
+                    <label class="title-input">Nombre</label>
+                    <input type="text" maxlength="20" id="name">
+                </fieldset>
+                <fieldset class="single-input">
+                    <label class="title-input">Proveedor</label>
+                    <input type="text" maxlength="20" id="provider">
+                </fieldset>
+                <fieldset class="single-input">
+                    <label class="title-input">Precio compra</label>
+                    <input type="number" id="priceBuy">
+                </fieldset>
+                <fieldset class="single-input">
+                    <label class="title-input">Precio venta</label>
+                    <input type="number" id="priceSell">
+                </fieldset>
+                <fieldset class="single-input">
+                    <label class="title-input">Stock</label>
+                    <input type="number" id="stock">
+                </fieldset>
+                <fieldset class="numerous-input">
+                    <label class="title-input">Unidad</label>
+                    <div class="body-input">
+                        <select id="unity">
+                            <option value="Kilogramo">Kilogramo</option>
+                            <option value="Gramo">Gramo</option>
+                            <option value="Litro">Litro</option>
+                            <option value="Mililitro">mililitro</option>
+                            <option value="m3">Metro cubico</option>
+                            <option value="Pieza">Pieza</option>
+                            <option value="Talla">Talla ropa</option>
+                            <option value="Numero">Talla zapato</option>
+                        </select>
+                        <input type="text" placeholder="Cantidad" id="quantity">
+                    </div>
+            </fieldset>
+            <!-- <fieldset class="numerous-input">
+                <label class="title-input">Categoria</label>
+                <div class="body-input">
+                    <select id="category">
+                        <option value="C1" id="cat1">Categoria 1</option>
+                        <option value="C2" id="cat2">Categoria 2</option>
+                        <option value="C3" id="cat3">Categoria 3</option>
+                        <option value="C4" id="cat4">Categoria 4</option>
+                    </select>
+                    <input type="text" placeholder="Nombre de la categoria (opcional)" id="categoryName">
+                </div>
+            </fieldset> -->
+            </div>
+            <section class="buttons-container">
+                <button id="closePopupUpdate">Cancelar</button>
+                <button id="actionUpdate">Aceptar</button>
+            </section>
+        </div>
+    </div>
+    
+    <!-- scripts -->
+    <script src="core/menu.js"></script>  
+    <script src="core/back.js"></script>  
+    <script src="core/inventory.js"></script>
+</body>
+</html>

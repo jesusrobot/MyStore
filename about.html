@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MyStore</title>
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i&display=swap"> -->
+    <link rel="shortcut icon" href="assets/img/favicon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style/components.css">
+    <link rel="stylesheet" href="style/normalize.css">
+    <link rel="stylesheet" href="style/about.css">
+</head>
+<body>
+    <!-- navigation -->
+    <nav class="navigation">
+        <section class="navigation-left">
+            <button class="button" id="back">
+                <img class="icon" src="assets/img/back.svg">
+            </button>
+        </section>
+        <section class="navigation-center">
+            <h1 class="app-title">MyStore</h1>
+        </section>
+        <section class="navigation-rigth">
+            
+            <!-- <button class="button">
+                <img class="icon" src="assets/img/save.svg" id="save">
+            </button>
+            <button class="button">
+                <img class="icon" src="assets/img/trash.svg" id="trash">
+            </button> -->
+            <button class="button">
+                <img class="icon" id="pop" src="assets/img/menutwo.svg">
+            </button>
+        </section>
+    </nav>
+    <!-- title bar -->
+    <section class="title-bar">
+        <div class="offset"></div>
+        <div class="title-container">
+            <p class="title">Acerca de</p>
+        </div>
+        <div class="offset"></div>
+    </section>
+    <!-- main app -->
+    <main class="main-app" id="main-app">
+        <div class="wrap">
+        <section class="logo-container-left">
+                <div class="logo-container">
+                    <p class="app-name">MyStore</p>
+                    <sub>By <span>impulse</span></sub>
+                </div>
+            </section>
+            <section class="info-container-right">
+            <p class="assing name"><span>MyStore</span></p>
+            <p class="assing version">version 1.0</p>
+            <!-- <p class="assing desarrollador"><span>Desarrollador:</span>Impulse softworks</p> -->
+            <p class="assing desarrollador"><span>Desarrollador:</span>Jesus M. Velasco</p>
+            <p class="assing fecha"><span>fecha de publicacion:</span>7 de octubre del 2019</p>
+            <p class="assing administrador"><span>Nombre de la tienda:</span><span id="nameStore"></span></p>
+            <p class="assing dueno"><span>Propietario de esta copia:</span><span id="adminStore"></span></p>
+            <section class="info">
+                <a href="#">Changelog</a>
+                </section>
+            </section>
+        </div>
+        
+    </main>
+    <!-- menu -->
+    <nav class="overlay-menu" id="overlay">
+        <div class="popup-menu" id="popup">
+            <div class="link-container">
+               <a href="create.html" class="link">Agregar producto</a> 
+            </div>
+            <div class="link-container">
+                <a href="register.html" class="link">Caja registradora</a>
+            </div>
+            <div class="link-container">
+                <a href="inventory.html" class="link">Inventario</a>
+            </div>
+            <div class="link-container">
+                <a href="history.html" class="link">Historial</a>
+            </div>
+            <!-- <div class="link-container">
+                <a href="notes.html" class="link">Notas</a>
+            </div> -->
+            <div class="link-container">
+                <a href="about.html" class="link here">Acerca de</a>
+            </div>
+            <!-- <div class="link-container">
+                <a href="configuration.html" class="link">Configuración</a>
+            </div> -->
+            <div class="link-container no-border-bottom">
+                <button class="close" id="cerrar">Cerrar</button>
+            </div>
+        </div>
+    </nav>
+    <!-- scripts -->
+    <script src="core/menu.js"></script> 
+    <script src="core/back.js"></script> 
+</body>
+</html>

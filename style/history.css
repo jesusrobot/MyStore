@@ -1,0 +1,255 @@
+:root {
+    --fz-big-form: 2em;
+    --fz-medium: 1em;
+    --fz-small: .7.5em;
+    --color-black: #504f4f;
+    --color-blue: rgb(10, 132, 255);
+    --color-green: rgb(48, 209, 88);
+    --color-red: rgb(255, 69, 58);
+    --color-yellow: rgb(255, 214, 10);
+    --color-orange: rgb(255, 159, 10);
+    --mb-big: 2vh;
+    --mb-small: .5vh;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Lato', sans-serif;
+    user-select: none;
+}
+.title-container p  {
+    margin: 0;
+}
+/* main app */
+.main-app{
+    display: flex;
+    justify-content: space-between;
+    justify-content: center;
+    width: auto;
+    height: 88vh;
+    padding: 0 3.5vw;
+    padding-top: 2vh;
+    
+}
+.left-container{
+    width: 30%;
+    overflow: scroll;
+    overflow-x: hidden; 
+    overflow-x: auto; 
+    overflow-y: auto;
+}
+
+.left-container::-webkit-scrollbar{
+    width: 8px;
+    height: 8px;
+    display: none;
+}
+h2.title-section {
+    position: absolute;
+    position: fixed;
+    color: #504f4f;
+    background: #fff;
+    width: 22%;
+    padding-bottom: 3vh;
+    /* background: greenyellow; */
+}
+
+.months {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* padding-top: 55px; */
+}
+
+.months > .btn {
+    width: 78%;
+    padding: 3vh;
+    border-radius: 10px;
+    border:  1px solid rgb(199,199,204);
+    background: #fff;
+    margin-bottom: 4vh;
+    color: #666666;
+    font-weight: 500;
+}
+.btn.top {
+    margin-top: 11vh;
+}
+.months > .btn:focus {
+    outline: 0;
+}
+.months > .here{
+    background: rgb(232, 238, 247);
+    color: rgb(10, 132, 255);
+    border: 1px solid rgb(12, 128, 243);
+}
+
+.rigth-container {
+    /* background: rgb(154, 194, 226); */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 70%;
+    overflow: scroll;
+    overflow-x: hidden; 
+    overflow-x: auto; 
+    overflow-y: auto;
+}
+.rigth-container::-webkit-scrollbar{
+    width: 8px;
+    height: 8px;
+    display: none;
+}
+.history {
+    display: flex;
+    flex-direction: column-reverse
+}
+/* acordion */
+
+.rigth-container article{
+    width: 100%;
+    margin-bottom: 4vh;
+
+}
+.remove{
+    display: none;
+}
+.header{
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    padding: 2.3vh;
+    border: 1px solid rgb(226, 226, 230);
+    background: #fff;
+}
+.header p{
+    margin: 0
+}
+.header > .date {
+    padding: 0% 1vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+    height: 100%;
+    font-size: .6em;
+    color: rgb(10, 132, 255);
+    border-right: 1px solid rgb(10, 132, 255);
+    /* background: red; */
+    
+
+}
+.date :nth-child(2) {
+    font-weight: 800;
+}
+.header  .desciption-sell {
+    width: 75%;
+    height: 100%;
+    padding-left: 3vw;
+    font-size: 1em;
+    color: #666666;
+    /* background: springgreen; */
+}
+
+.total {
+    display: flex;
+    justify-content: flex-end;
+    height: 100%;
+    width: 30%;
+}
+.total > p{
+    color: rgb(10, 132, 255);
+    font-weight: 400;
+}
+
+/* content */
+.content {
+    border: 1px solid rgb(226, 226, 230);
+    border-top: none;
+
+}
+.x {
+    padding: 0 10px 0 5px;
+    font-weight: 300;
+}
+.unregistred{
+    font-weight: 300;
+    /* font-size: .7em; */
+}
+.content  p {
+    margin: 0;
+}
+.content .row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:  2.3vh;
+}
+.name > p{
+    font-size: .9em;
+    color: #666666;
+}
+.divisa {
+    font-size: .8em;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    .rigth-container article {
+        width: 100%;
+        margin-bottom: 2vh !important;
+    }
+    .left-container{
+        margin: 0 auto;
+        display: none;
+    }
+    .rigth-container {
+        width: 100%;
+
+    }
+    .date-primary{
+        width: 90%;
+        margin: 0 auto;
+
+    }
+    .rigth-container article{
+        width: 90%;
+        margin: 0 auto;
+
+    }
+    .header{
+        font-size: .7em;
+    }
+    .uk-accordion-content {
+        font-size: .8em;
+    }
+    .desciption-sell {
+        width: 40% !important;
+        /* background: blue; */
+    }
+    .date {
+        /* background: red; */
+        width: 20% !important;
+    }
+    .total{
+        font-size: .8em;
+        width: 40%;
+    }
+
+}
+@media only screen and (max-device-height: 360px){
+    .main-app {
+        height: 81vh;
+    }
+    .title-bar{
+        height: 8vh;
+    }
+}
+@media only screen and (min-device-width : 768px) and (max-device-width : 1000px) {
+    .months .btn{
+        width: 100%;
+    }
+}

@@ -1,0 +1,716 @@
+.dollar {
+    font-weight: 600;
+    font-size: 1.5em;
+    color: #504f4f;
+    margin-right: 2px;  
+}
+:root{    
+    --second-color: #5CCAFF;
+    --blue: #2F60FF;
+    --background-color: rgb(242, 242, 247);
+    --background-color-pop: rgba(0, 0, 0, .3);
+    --fz-big: 1.1em;
+    --color-text-title: #504f4f;
+    --color-text-content: #666;
+}
+/* Component 1 : Navigation */
+.navigation {
+    width: 100%;
+    height: 8vh;
+    padding: 0 3.5vw;
+    display: flex;
+    justify-content: space-between;
+    background: var(--background-color);
+    border-bottom: .1vh solid rgb(199,199,204);
+}
+.back {
+    margin-right: 6.98px;
+}
+.navigation > [class^="navigation-"]{
+    width: 33.3%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.navigation .button {
+    border: none;
+    background: none;
+    padding: 1.1vh;
+}
+.navigation .button:focus {
+    outline: none;
+}
+.navigation img.icon {
+    width: 1em;
+    height: 1em;
+}
+.navigation-center {
+    justify-content: center;
+}
+.app-title {
+    margin: 0;
+    font-size: var(--fz-big);
+    color: rgb(10, 132, 255);
+    font-weight: 700;
+}
+.navigation-rigth {
+    justify-content: flex-end;
+}
+.navigation-rigth :nth-child(5) {
+    margin-left: 1.2vh;
+}
+
+
+
+/* Component 2 : Title Bar */
+.title-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
+    height: 4vh;
+    padding: 0 3.5vw;
+    background: rgb(252, 252, 253);
+    border-bottom: .1vh solid rgb(199,199,204);
+}
+.offset {
+    width: 30%;
+    height: 100%;
+}
+.title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 39%;
+    height: 100%;
+}
+.title-bar .title {
+    font-size: .8em;
+    font-weight: 300;
+    color: lightslategrey;
+    letter-spacing: .5px;
+}
+/* Component 3 : Menu */
+.overlay-menu{
+    background-color: var(--background-color-pop);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+}
+.overlay-menu  .no-border-bottom{
+    border-bottom: none;
+}
+.overlay-menu.active{
+    visibility: visible;
+}
+.overlay-menu > .popup-menu{
+    background: #fff;
+    box-shadow: inset -2px 1px 7px 0px rgba(235, 236, 236, 0.45);
+    border-radius: 12px;
+    text-align: center;
+    width: 30VW;
+    transition: .3s ease all;
+    transform: scale(0.7);
+    opacity: 0;
+}
+.popup-menu .here{
+    font-weight: 700;
+}
+.popup-menu.active {
+    transform: scale(1);
+    opacity: 1;
+}
+.link-container{
+    border-bottom: 1px solid #efefef;
+}
+.link-container > .link{    
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    padding: 2vh 0;
+    text-decoration: none;
+    color: #504f4f;
+    font-size: 14px;
+}
+.overlay-menu .close{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    padding: 2.5vh 0;
+    text-decoration: none;
+    color: #504f4f;
+    font-size: 16px;
+    background: none;
+    border: none;
+    color: rgb(10, 132, 255);
+    font-weight: 700;
+}
+.overlay-menu .close:focus {
+    outline: none;
+}
+/* Componente 4 : Delete */
+.overlay-delete{
+    background-color: var(--background-color-pop);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+}
+.overlay-delete  p{
+    margin: 0;
+}
+.overlay-delete.active{
+    visibility: visible;
+}
+.popup-delete{
+    background: #fff;
+    box-shadow: inset -2px 1px 7px 0px rgba(235, 236, 236, 0.45);
+    border-radius: 12px;
+    text-align: center;
+    width: 30VW;
+    transition: .3s ease all;
+    transform: scale(0.7);
+    opacity: 0;
+}
+.popup-delete .title-container{
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 3.5vh;
+}
+.popup-delete .title{
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--color-text-title);
+}
+.description-container{
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    margin: 0 auto;
+    padding: 3vh 0;
+}
+ .description{
+    font-size: 1em;
+    font-weight: 400;
+    color: var(--color-text-content);
+}
+ .buttons-container{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+    border-top: .1vh solid rgb(199,199,204);
+}
+.overlay-delete > .popup-delete > .buttons-container >  :nth-child(1){
+    border-right: .1vh solid rgb(199,199,204);
+    color: rgb(10, 132, 255);
+}
+ .buttons-container > button{
+    width: 50%;
+    padding: 2.5vh;
+    background: none;
+    border: none;
+    color: rgb(10, 132, 255);
+    font-weight: 700;
+}
+ .buttons-container > button:focus{
+    outline: 0;
+}
+/*Componente 5 : Save  */
+.overlay-save{
+    background-color: var(--background-color-pop);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+}
+.overlay-save p{
+    margin: 0;
+}
+.overlay-save.active{
+    visibility: visible;
+}
+.popup-save{
+    background: #fff;
+    box-shadow: inset -2px 1px 7px 0px rgba(235, 236, 236, 0.45);
+    border-radius: 12px;
+    text-align: center;
+    width: 30VW;
+    transition: .3s ease all;
+    transform: scale(0.7);
+    opacity: 0;
+}
+.overlay-save  .title-container{
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 3.5vh;
+}
+.overlay-save  .title{
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--color-text-title);
+}
+.overlay-save .description-container{
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    margin: 0 auto;
+    padding: 3vh 0;
+}
+.overlay-save .description{
+    font-size: 1em;
+    font-weight: 400;
+    color: var(--color-text-content);
+}
+.overlay-save .buttons-container{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+    border-top: .1vh solid rgb(199,199,204);
+}
+.overlay-save > .popup-save > .buttons-container :nth-child(1){
+    border-right: .1vh solid rgb(199,199,204);
+    color: rgb(10, 132, 255);
+}
+.overlay-save .buttons-container > button{
+    width: 50%;
+    padding: 2.5vh;
+    background: none;
+    border: none;
+    color: rgb(10, 132, 255);
+    font-weight: 700;
+}
+.overlay-save .buttons-container > button:focus{
+    outline: 0;
+}
+/* Component 6 : Alert */
+.overlay-alert{
+    background-color: var(--background-color-pop);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+}
+.overlay-alert p{
+    margin: 0;
+}
+.overlay-alert.active{
+    visibility: visible;
+}
+.popup-alert{
+    background: #fff;
+    box-shadow: inset -2px 1px 7px 0px rgba(235, 236, 236, 0.45);
+    border-radius: 12px;
+    text-align: center;
+    width: 30VW;
+    transition: .3s ease all;
+    transform: scale(0.7);
+    opacity: 0;
+}
+.popup-alert .title-container{
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 3.5vh;
+}
+ .popup-alert .title-container >  .title{
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--color-text-title);
+}
+.description-container{
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    margin: 0 auto;
+    padding: 3vh 0;
+}
+.description-container > .description{
+    font-size: 1.1em;
+    font-weight: 400;
+    color: var(--color-text-content);
+}
+.buttons-container{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+    border-top: .1vh solid rgb(199,199,204);
+}
+.popup-alert .buttons-container > button{
+    width: 100%;
+    padding: 2.5vh;
+    background: none;
+    border: none;
+    color: rgb(10, 132, 255);
+    font-weight: 700;
+}
+.buttons-container > button:focus{
+    outline: 0;
+}
+/* Finder */
+.finder-container .finder{
+    padding: .3em 1em;
+    font-size: .8em;
+    background: rgb(232, 232, 238);
+    border: 1px solid rgb(146, 146, 150);
+    border-radius: 25px;
+    text-align: center;
+    height: 2em;
+    margin-right: 2vw;
+}
+.finder:focus{
+    background: white;
+    outline: 0;
+}
+/* Printer */
+.printer {
+    margin-bottom: 1.2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-text-content);
+    font-size: 1em;
+}
+.printer .label p {
+    margin-bottom: 4px;
+    margin-right: 2em;
+}
+input[type="checkbox"].ios8-switch {
+    position: absolute;
+    margin: 8px 0 0 16px;    
+}
+input[type="checkbox"].ios8-switch + label {
+    position: relative;
+    padding: 5px 0 0 50px;
+    line-height: 2.0em;
+}
+
+input[type="checkbox"].ios8-switch + label:before {
+    content: "";
+    position: absolute;
+    display: block;
+    left: 0;
+    top: 0;
+    width: 50px; /* x*5 */
+    height: 24px; /* x*3 */
+    border-radius: 16px; /* x*2 */
+    background: rgb(235, 236, 236);
+    border: 1px solid #d9d9d9;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+input[type="checkbox"].ios8-switch + label:after {
+    content: "";
+    position: absolute;
+    display: block;
+    left: 0px;
+    top: 0px;
+    width: 24px; /* x*3 */
+    height: 24px; /* x*3 */
+    border-radius: 16px; /* x*2 */
+    background: #fff;
+    border: 1px solid #d9d9d9;
+    -webkit-transition: all 0.3s;
+    transition: all 0.1s;
+}
+input[type="checkbox"].ios8-switch + label:hover:after {
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+input[type="checkbox"].ios8-switch:checked + label:after {
+    margin-left: 26px;
+}
+input[type="checkbox"].ios8-switch:checked + label:before {
+    background: rgb(56, 147, 243);
+}
+
+
+
+
+/* Responsive Componetes */
+@media  screen and (min-device-width: 320px) and (max-device-width: 480px) { 
+    .navigation-rigth :nth-child(3) {
+        margin-left: 0vw;
+    }
+    /* ----- POPUP MENU ----- */
+    .overlay-menu{
+        background-color: rgba(0, 0, 0, .3);
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        visibility: hidden;
+    }
+    .overlay-menu > .popup-menu{
+        background: #fff;
+        box-shadow: inset -2px 1px 7px 0px rgba(235, 236, 236, 0.45);
+        border-radius: 12px;
+        text-align: center;
+        width: 80VW;
+        transition: .3s ease all;
+        transform: scale(0.7);
+        opacity: 0;
+    }
+    .popup-menu.active {
+        transform: scale(1);
+        opacity: 1;
+    }
+    .overlay-menu > .popup-menu > .link-container > .link{    
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        padding: 2vh 0;
+        text-decoration: none;
+        color: #504f4f;
+        font-size: 14px;
+    }
+    .overlay-menu > .popup-menu > .link-container > .close{
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        padding: 2vh 0;
+        text-decoration: none;
+        color: #504f4f;
+        font-size: 16px;
+        background: none;
+        border: none;
+        color: rgb(10, 132, 255);
+        font-weight: 700;
+    }
+    /* ----- POPUP DELETE ----- */
+    .overlay-delete{
+        background-color: rgba(0, 0, 0, .3);
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        visibility: hidden;
+    }
+    .overlay-delete > .popup-delete{
+        background: #fff;
+        box-shadow: inset -2px 1px 7px 0px rgba(235, 236, 236, 0.45);
+        border-radius: 12px;
+        text-align: center;
+        width: 80vw;
+        transition: .3s ease all;
+        transform: scale(0.7);
+        opacity: 0;
+    }   
+
+    /* ----- POPUP SAVE ----- */
+    .overlay-save{
+        background-color: rgba(0, 0, 0, .3);
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        visibility: hidden;
+    }
+    .overlay-save > .popup-save{
+        background: #fff;
+        box-shadow: inset -2px 1px 7px 0px rgba(235, 236, 236, 0.45);
+        border-radius: 12px;
+        text-align: center;
+        width: 80vw;
+        transition: .3s ease all;
+        transform: scale(0.7);
+        opacity: 0;
+    }  
+    /* ----- POPUP ALERT ----- */
+    .overlay-alert{
+        background-color: rgba(0, 0, 0, .3);
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        visibility: hidden;
+    }
+    .overlay-alert > .popup-alert{
+        background: #fff;
+        box-shadow: inset -2px 1px 7px 0px rgba(235, 236, 236, 0.45);
+        border-radius: 12px;
+        text-align: center;
+        width: 80vw;
+        transition: .3s ease all;
+        transform: scale(0.7);
+        opacity: 0;
+    }  
+}
+@media  screen and (max-device-height: 360px){
+    /* ----- NAVIGATION ----- */
+    .navigation{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: auto;
+        height: 11vh;
+        padding: 0 3.5vw;
+        background-color: rgb(242, 242, 247);
+        border-bottom: .1vh solid rgb(199,199,204);
+    }
+    .navigation-rigth :nth-child(3) {
+        margin-left: 0vw;
+    }
+    /* ----- TITLE BAR ----- */
+    .title-bar{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: auto;
+        height: 6vh;
+        padding: 0 3.5vw;
+        background: rgb(252, 252, 253);
+        border-bottom: .1vh solid rgb(199,199,204);
+    }
+}
+@media  screen and (min-device-width : 768px) and (max-device-width : 1000px) {
+    
+    .overlay-menu > .popup-menu{
+        background: #fff;
+        box-shadow: inset -2px 1px 7px 0px rgba(235, 236, 236, 0.45);
+        border-radius: 12px;
+        text-align: center;
+        width: 40VW;
+        transition: .3s ease all;
+        transform: scale(0.7);
+        opacity: 0;
+    }
+    .popup-menu.active {
+        transform: scale(1);
+        opacity: 1;
+    }
+    .overlay-menu > .popup-menu > .link-container > .link{    
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        padding: 2vh 0;
+        text-decoration: none;
+        color: #504f4f;
+        font-size: 14px;
+    }
+    .overlay-menu > .popup-menu > .link-container > .close{
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        padding: 2vh 0;
+        text-decoration: none;
+        color: #504f4f;
+        font-size: 16px;
+        background: none;
+        border: none;
+        color: rgb(10, 132, 255);
+        font-weight: 700;
+    }
+    /* ----- POPUP DELETE ----- */
+    .overlay-delete{
+        background-color: rgba(0, 0, 0, .3);
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        visibility: hidden;
+    }
+    .overlay-delete > .popup-delete{
+        background: #fff;
+        box-shadow: inset -2px 1px 7px 0px rgba(235, 236, 236, 0.45);
+        border-radius: 12px;
+        text-align: center;
+        width: 40VW;
+        transition: .3s ease all;
+        transform: scale(0.7);
+        opacity: 0;
+    }
+    /* ----- POPUP SAVE ----- */
+    .overlay-save{
+        background-color: rgba(0, 0, 0, .3);
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        visibility: hidden;
+    }
+    .overlay-save > .popup-save{
+        background: #fff;
+        box-shadow: inset -2px 1px 7px 0px rgba(235, 236, 236, 0.45);
+        border-radius: 12px;
+        text-align: center;
+        width: 40VW;
+        transition: .3s ease all;
+        transform: scale(0.7);
+        opacity: 0;
+    }
+    /* ----- POPUP ALERT ----- */
+    .overlay-alert{
+        background-color: rgba(0, 0, 0, .3);
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        visibility: hidden;
+    }
+    .overlay-alert > .popup-alert{
+        background: #fff;
+        box-shadow: inset -2px 1px 7px 0px rgba(235, 236, 236, 0.45);
+        border-radius: 12px;
+        text-align: center;
+        width: 40VW;
+        transition: .3s ease all;
+        transform: scale(0.7);
+        opacity: 0;
+    }
+}
